@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Veridical
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131203
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'fonts.css'%}" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a href="/" accesskey="1" title="">Homepage</a></li>
+				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
+				<li><a href="#" accesskey="3" title="">About Us</a></li>
+
+				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+
+
+			</ul>
+		</div>
+    </div>
+</div>
+<div id="wrapper1">
+	<div id="welcome" class="container">
+
+            <p>Already registered? Please login <a href="/loginpgm/login">here</a></p><br>
+        <form method="post" >
+             {% csrf_token %}
+
+                    {{ form.username.label }}
+                    {{ form.username }}
+                    <strong class="row-form-errors"> {{ form.username.errors }}</strong>
+
+                <br>
+
+                    {{ form.password1.label }}
+                    {{ form.password1 }}
+                    <strong>{{ form.password1.errors }}</strong>
+
+                <br>
+
+                    {{ form.password2.label }}
+                    {{ form.password2 }}
+                    <strong>{{ form.password2.errors }}</strong>
+
+                <br>
+
+                    {{ form.emailid.label }}
+                    {{ form.emailid }}
+                     <strong>{{ form.emailid.errors }}</strong>
+
+                <br>
+
+                    {{ form.first_name.label }}
+                    {{ form.first_name }}
+                    <strong>{{ form.first_name.errors  }}</strong>
+
+                <br>
+
+                    {{ form.last_name.label }}
+                    {{ form.last_name }}
+                    <strong>{{ form.last_name.errors }}</strong>
+
+                <br>
+                 <input type="submit" name="submit" value="Register" />
+         </form>
+
+
+
+		<div id="logo">
+			<h1><a href="#">Veridical</a></h1>
+			<span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span> </div>
+
+
+    </div>
+</div>
+
+
+</body>
+</html>
